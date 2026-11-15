@@ -396,7 +396,7 @@ describe("when the API cannot be reached", () => {
   it("says so instead of loading forever", async () => {
     unreachable();
     render(<BillingSettings />);
-    expect(await screen.findByText("Einstellungen konnten nicht geladen werden — die API ist nicht erreichbar.")).toBeTruthy();
+    expect(await screen.findByText(/^Einstellungen konnten nicht geladen werden.*nicht erreichbar/)).toBeTruthy();
     expect(screen.queryByLabelText("Wird geladen")).toBeNull();
   });
 

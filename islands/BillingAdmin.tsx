@@ -53,7 +53,7 @@ export default function BillingAdmin() {
     // the API rejects. Uncaught, the list stayed on its spinner for good.
     const res = await apiFetch("/admin/invoices").catch(() => null);
     if (res === null) {
-      setStatus("Rechnungen konnten nicht geladen werden — die API ist nicht erreichbar.");
+      setStatus("Rechnungen konnten nicht geladen werden, die API ist nicht erreichbar.");
       setLoaded(true);
       return;
     }
@@ -102,7 +102,7 @@ export default function BillingAdmin() {
       }).catch(() => null);
     if (res === null) {
       // The form stays open with everything typed into it.
-      toast.danger("Entwurf konnte nicht erstellt werden — die API ist nicht erreichbar.");
+      toast.danger("Entwurf konnte nicht erstellt werden, die API ist nicht erreichbar.");
       return;
     }
     if (res.ok) {
@@ -127,7 +127,7 @@ export default function BillingAdmin() {
     if (res === null) {
       // A dropped connection can still have delivered the request; the reload
       // below shows the invoice's real status.
-      toast.danger("Senden fehlgeschlagen — die API ist nicht erreichbar.");
+      toast.danger("Senden fehlgeschlagen, die API ist nicht erreichbar.");
       void load();
       return;
     }
@@ -156,7 +156,7 @@ export default function BillingAdmin() {
       }
     } catch {
       setPendingDelete(null);
-      toast.danger("Löschen fehlgeschlagen — die API ist nicht erreichbar.");
+      toast.danger("Löschen fehlgeschlagen, die API ist nicht erreichbar.");
     } finally {
       setDeleting(false);
     }

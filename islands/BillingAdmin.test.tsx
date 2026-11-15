@@ -429,7 +429,7 @@ describe("creating a draft", () => {
     expect(items[0]!.description).toBe("Konzeption");
   });
 
-  it("reads a zero quantity as 1 — a 0 would invoice nothing at all", async () => {
+  it("reads a zero quantity as 1, a 0 would invoice nothing at all", async () => {
     const u = await open();
     await fillOnePosition(u, "Konzeption", "0");
     await u.click(screen.getByRole("button", { name: "Entwurf erstellen" }));
@@ -589,7 +589,7 @@ describe("when the API cannot be reached", () => {
   it("says so instead of loading forever", async () => {
     unreachable();
     render(<BillingAdmin />);
-    expect(await screen.findByText("Rechnungen konnten nicht geladen werden — die API ist nicht erreichbar.")).toBeTruthy();
+    expect(await screen.findByText("Rechnungen konnten nicht geladen werden, die API ist nicht erreichbar.")).toBeTruthy();
     expect(screen.queryByLabelText("Wird geladen")).toBeNull();
   });
 

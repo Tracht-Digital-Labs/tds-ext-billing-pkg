@@ -30,6 +30,7 @@ composer install && composer test   # phpunit (webhook HMAC, module RBAC; DB-fre
 - Call the API with `apiFetch`, never a relative `fetch`. Never mount a `ToastHost`.
 - Every route change updates `php/docs/api.php`. Migration names stay unique across extensions.
 - No CSS; shared `tds-shared` classes only. Versions move via the release workflow only.
+- Follows the TDS quality standard (`../tds-ops/standards/quality.md`): no AI slop, clean code.
 
 ## Topic files
 

@@ -15,7 +15,7 @@ describe("identity", () => {
     expect(manifest.id).toBe("billing");
   });
 
-  it("uses a slug-safe id — it becomes part of nav keys and route paths", () => {
+  it("uses a slug-safe id, it becomes part of nav keys and route paths", () => {
     expect(manifest.id).toMatch(/^[a-z][a-z0-9-]*$/);
   });
 
@@ -24,7 +24,7 @@ describe("identity", () => {
     expect(manifest.version).toMatch(/^\d+\.\d+\.\d+$/);
   });
 
-  it("composes standalone — it declares no dependsOn", () => {
+  it("composes standalone, it declares no dependsOn", () => {
     // invoice.customer_id references the tds-ext-customers directory softly, so
     // a product may compose billing without it.
     expect(manifest.dependsOn ?? []).toHaveLength(0);

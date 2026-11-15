@@ -73,7 +73,7 @@ final class BillingModule extends AbstractModule implements ApiDocSource, Stripe
     public function settings(): array
     {
         return [
-            new SettingDef('stripe_secret_key', 'Stripe Secret Key (optional — leer = zentrales Konto)', true, 'billing'),
+            new SettingDef('stripe_secret_key', 'Stripe Secret Key (optional, leer = zentrales Konto)', true, 'billing'),
             new SettingDef('stripe_webhook_secret', 'Stripe Webhook Secret', true, 'billing'),
             new SettingDef('default_currency', 'Standard-Währung', false, 'billing', 'EUR'),
             new SettingDef('days_until_due', 'Zahlungsziel (Tage)', false, 'billing', '14'),

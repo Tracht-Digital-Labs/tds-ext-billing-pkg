@@ -62,7 +62,7 @@ export default function BillingPortal() {
       const res = await apiFetch("/billing/invoices").catch(() => null);
       if (!alive) return;
       if (res === null) {
-        setError("Rechnungen konnten nicht geladen werden — die Verbindung ist unterbrochen. Bitte später erneut versuchen.");
+        setError("Rechnungen konnten nicht geladen werden, die Verbindung ist unterbrochen. Bitte später erneut versuchen.");
       } else if (res.status === 403) {
         setError("Ihr Zugang enthält keine Berechtigung für Rechnungen. Ihr Firmen-Administrator kann sie freigeben.");
       } else if (!res.ok) {

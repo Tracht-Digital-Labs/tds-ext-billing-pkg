@@ -19,7 +19,7 @@ return [
         'summary' => 'Offene Rechnungen und Stripe-Konfigurationszustand',
         'description' => 'Die `dataEndpoint`-Route des Dashboard-Widgets. `configured` '
             . 'unterscheidet „keine offenen Rechnungen" von „Stripe ist gar nicht '
-            . 'eingerichtet" — ohne das zeigt das Widget in beiden Fällen dieselbe Null.',
+            . 'eingerichtet", ohne das zeigt das Widget in beiden Fällen dieselbe Null.',
         'permission' => 'billing:read',
         'responses' => [
             ['status' => 200, 'description' => '`{configured: bool, open: <Anzahl>}`'],
@@ -44,7 +44,7 @@ return [
         'pattern' => '/admin/invoices',
         'tag' => 'Verwaltung',
         'summary' => 'Rechnungsentwurf anlegen',
-        'description' => 'Legt nur lokal an — bei Stripe passiert noch nichts. Das ist der '
+        'description' => 'Legt nur lokal an, bei Stripe passiert noch nichts. Das ist der '
             . 'erste Schritt der Kette Entwurf → senden → per Webhook bezahlt.',
         'auth' => 'admin',
         'params' => [
@@ -85,7 +85,7 @@ return [
         'description' => 'Der unumkehrbare Schritt: die Rechnung entsteht bei Stripe und '
             . 'wird finalisiert. Nur aus dem Status `draft` möglich (sonst 409). Name '
             . 'und E-Mail kommen aus dem Kundenverzeichnis, können aber im Body '
-            . 'überschrieben werden — für Rechnungen ohne hinterlegten Kunden. '
+            . 'überschrieben werden, für Rechnungen ohne hinterlegten Kunden. '
             . 'Ein Fehler von Stripe wird als **502** durchgereicht, nicht als 500: '
             . 'die Anfrage war in Ordnung, der nachgelagerte Dienst nicht.',
         'auth' => 'admin',
@@ -101,7 +101,7 @@ return [
             ['status' => 404, 'description' => 'Unbekannte Id.'],
             ['status' => 409, 'description' => 'Die Rechnung ist kein Entwurf mehr.'],
             ['status' => 422, 'description' => 'Weder Kunde noch Name/E-Mail vorhanden.'],
-            ['status' => 502, 'description' => 'Stripe hat die Anlage abgelehnt — die Meldung wird wörtlich durchgereicht.'],
+            ['status' => 502, 'description' => 'Stripe hat die Anlage abgelehnt, die Meldung wird wörtlich durchgereicht.'],
             ['status' => 503, 'description' => 'Kein Stripe Secret Key konfiguriert.'],
         ],
     ],
@@ -110,7 +110,7 @@ return [
         'pattern' => '/admin/invoices/{id:[0-9]+}',
         'tag' => 'Verwaltung',
         'summary' => 'Rechnung lokal löschen',
-        'description' => 'Löscht nur den lokalen Datensatz — eine bereits bei Stripe '
+        'description' => 'Löscht nur den lokalen Datensatz, eine bereits bei Stripe '
             . 'angelegte Rechnung bleibt dort bestehen und muss dort storniert werden.',
         'auth' => 'admin',
         'params' => [
@@ -142,7 +142,7 @@ return [
         'tag' => 'Portal',
         'summary' => 'Eine eigene Rechnung lesen',
         'description' => 'Ein Admin darf jede Rechnung lesen; sonst muss sie zur aktiven '
-            . 'Firma gehören. Beides ergibt sonst 404, nicht 403 — die Existenz einer '
+            . 'Firma gehören. Beides ergibt sonst 404, nicht 403, die Existenz einer '
             . 'fremden Rechnung wird nicht preisgegeben.',
         'permission' => 'billing:read',
         'params' => [
@@ -171,7 +171,7 @@ return [
             ['in' => 'header', 'name' => 'Stripe-Signature', 'type' => 'string', 'required' => true, 'description' => 'Von Stripe erzeugte Signatur über den rohen Body.'],
         ],
         'responses' => [
-            ['status' => 200, 'description' => '`{received: true}` — auch für nicht behandelte Ereignistypen.'],
+            ['status' => 200, 'description' => '`{received: true}`, auch für nicht behandelte Ereignistypen.'],
             ['status' => 400, 'description' => 'Signatur ungültig.'],
             ['status' => 503, 'description' => 'Kein Webhook-Secret konfiguriert.'],
         ],
