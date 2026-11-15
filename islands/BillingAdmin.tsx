@@ -177,7 +177,7 @@ export default function BillingAdmin() {
             <label className="tds-field-row">
               <span>Kunde</span>
               <select className="field-boxed" value={customerId} onChange={(e) => setCustomerId(e.target.value)}>
-                <option value="">— ohne Kunde —</option>
+                <option value="">Ohne Kunde</option>
                 {companies.map((c) => (
                   <option key={c.id} value={String(c.id)}>{c.name}</option>
                 ))}
