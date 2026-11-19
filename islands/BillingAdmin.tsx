@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
-import { Alert, ConfirmDialog, Spinner, toast } from "@tracht-digital-solutions/tds-shared/components";
-import { apiFetch, sendJson } from "@tracht-digital-solutions/tds-shared/api";
-import { AnimatedItem, AnimatedList } from "@tracht-digital-solutions/tds-shared/motion/react";
-import { formatCents, formatIsoDay, parseEuros } from "@tracht-digital-solutions/tds-shared/format";
+import { Alert, ConfirmDialog, Spinner, toast } from "@tracht-digital-labs/tds-shared/components";
+import { apiFetch, sendJson } from "@tracht-digital-labs/tds-shared/api";
+import { AnimatedItem, AnimatedList } from "@tracht-digital-labs/tds-shared/motion/react";
+import { formatCents, formatIsoDay, parseEuros } from "@tracht-digital-labs/tds-shared/format";
 
 interface Invoice {
   id: number;

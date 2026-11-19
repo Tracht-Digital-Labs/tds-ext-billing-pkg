@@ -1,7 +1,7 @@
 import { useEffect, useState } from "react";
-import { Alert, Spinner } from "@tracht-digital-solutions/tds-shared/components";
-import { apiFetch } from "@tracht-digital-solutions/tds-shared/api";
-import { formatCents, formatIsoDay } from "@tracht-digital-solutions/tds-shared/format";
+import { Alert, Spinner } from "@tracht-digital-labs/tds-shared/components";
+import { apiFetch } from "@tracht-digital-labs/tds-shared/api";
+import { formatCents, formatIsoDay } from "@tracht-digital-labs/tds-shared/format";
 
 /**
  * The portal's invoice view: the active company's own invoices, newest first,

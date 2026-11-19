@@ -1,7 +1,7 @@
 // @vitest-environment jsdom
 import { describe, it, expect, vi, beforeEach, afterEach } from "vitest";
 import { render, screen, cleanup } from "@testing-library/react";
-import { primeRuntimeConfig } from "@tracht-digital-solutions/tds-shared/api";
+import { primeRuntimeConfig } from "@tracht-digital-labs/tds-shared/api";
 import BillingPortal from "./BillingPortal";
 
 /**

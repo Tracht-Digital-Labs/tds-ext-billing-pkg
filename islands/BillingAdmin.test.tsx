@@ -1,10 +1,10 @@
 // @vitest-environment jsdom
 import { afterEach, beforeEach, describe, expect, it, vi } from "vitest";
-import { primeRuntimeConfig } from "@tracht-digital-solutions/tds-shared/api";
+import { primeRuntimeConfig } from "@tracht-digital-labs/tds-shared/api";
 import { cleanup, fireEvent, render, screen, waitFor, within } from "@testing-library/react";
 import userEvent from "@testing-library/user-event";
 import BillingAdmin from "./BillingAdmin";
-import { TOAST_EVENT } from "@tracht-digital-solutions/tds-shared/toast";
+import { TOAST_EVENT } from "@tracht-digital-labs/tds-shared/toast";
 
 /**
  * The invoice admin. This island creates invoices and hands them to STRIPE,

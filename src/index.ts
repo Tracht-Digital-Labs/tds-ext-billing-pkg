@@ -1,4 +1,4 @@
-import { defineExtension } from "@tracht-digital-solutions/tds-frontend-contract";
+import { defineExtension } from "@tracht-digital-labs/tds-frontend-contract";
 
 /**
  * Stripe billing/invoices manifest. Admin drafts + sends invoices; portal
@@ -36,7 +36,7 @@ export default defineExtension({
     {
       id: "billing-open",
       title: "Offene Rechnungen",
-      island: "@tracht-digital-solutions/tds-ext-billing/widgets/Widget.astro",
+      island: "@tracht-digital-labs/tds-ext-billing/widgets/Widget.astro",
       size: "sm",
       // The portal key, like the page: the summary counts the active company's
       // own open invoices for a customer and every open one for an admin.
@@ -49,14 +49,14 @@ export default defineExtension({
     {
       id: "billing",
       label: "Stripe / Rechnungen",
-      island: "@tracht-digital-solutions/tds-ext-billing/islands/Settings.astro",
+      island: "@tracht-digital-labs/tds-ext-billing/islands/Settings.astro",
       order: 10,
     },
   ],
   routes: [
     {
       pattern: "/rechnungen",
-      entrypoint: "@tracht-digital-solutions/tds-ext-billing/pages/Index.astro",
+      entrypoint: "@tracht-digital-labs/tds-ext-billing/pages/Index.astro",
       permission: "invoices:read",
     },
   ],
